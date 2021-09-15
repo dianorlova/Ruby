@@ -1,0 +1,16 @@
+<div class="grid-x grid-margin-x">
+    <h3>Поиск абонента</h3>
+</div>
+
+<% form({ method: :post },{ obj: @parameters }) do |f|%>
+    <div class="grid-x grid-margin-x">
+            <div class="cell large-12">
+                <p>Введите индивидуальный номер телефона абонента</p>
+                <%= f.input(:telephone, type: :text, label: 'Телефон', placeholder: '123456', options: 100000.upto(999999).to_a)%>
+            </div>
+            <div class="cell large-12">
+                <%= f.button(value: 'Поиск', class: 'button') %>
+                <a href="<%= '/subscribers' %>" class="button secondary">Отмена</a>
+            </div>
+    </div>
+<% end %>

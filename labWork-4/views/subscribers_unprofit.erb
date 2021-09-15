@@ -1,0 +1,37 @@
+<div class="grid-x grid-margin-x">
+    <div class="large-12 cell">
+        <h4>Список абонентов, использующих невыгодный тариф</h4>
+        <div class="cell large-12">
+            <a href="<%= '/subscribers' %>" class="button secondary">Вернуться к главной странице</a>
+        </div>
+
+        <table>
+                <thead>
+                    <tr>
+                        <th>Фамилия</th>
+                        <th>6-значный<br>номер телефона</th>
+                        <th>Количество минут телефонных разговоров</th>
+                        <th>Текущий тариф</th>
+                        <th>Оплата за последний месяц</th>
+                        <th>Выгодный тариф</th>
+                        <th>Оплата по выгодному тарифу</th>
+                        <th>Подробнее</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @subscribers_unprofit.each do |subscriber|%>
+                    <tr>
+                        <td><%= subscriber.surname %></td>
+                        <td><%= subscriber.telephone %></td>
+                        <td><%= subscriber.minutes %></td>
+                        <td><%= subscriber.tariff %></td>
+                        <td><%= subscriber.payment_for_last_month %></td>
+                        <td><%= subscriber.profit_tariff %></td>
+                        <td><%= subscriber.payment_for_last_month_other_tariff(subscriber.profit_tariff) %></td>
+                        <td><a href="/subscribers/<%= subscriber.telephone %>">Смотреть</a></td>
+                    </tr>
+                    <% end %>
+                </tbody>
+            </table>
+    </div>
+</div>

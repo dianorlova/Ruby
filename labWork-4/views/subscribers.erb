@@ -1,0 +1,48 @@
+<div class="grid-x grid-padding-x">
+
+    <div class="large-12 cell">
+        <h3>Главная страница</h3>
+    </div>
+
+    <div class="large-12 cell callout secondary">
+        <h4>Меню</h4> 
+        <ul class="vertical menu">
+            <li><a href="/subscribers/new">Добавить абонента</a></li>
+            <li><a href="/subscribers/find">Найти абонента по номеру телефона</a></li>
+            <li><a href="/subscribers/groups">Вывести список всех абонентов, сгруппированный по тарифному плану и отсортированный по фамилии</a></li>
+            <li><a href="/subscribers/statistics">Статистика за месяц</a></li>
+            <li><a href="/subscribers/unprofit_tariff">Вывести список абонентов, которые используют невыгодный тариф</a></li>
+            
+        </ul>
+    </div>
+
+    <div class="large-12 cell">
+        <h4>Список абонентов</h4>  
+        <table>
+            <thead>
+                <tr>
+                    <th>Имя</th>
+                    <th>Фамилия</th>
+                    <th>6-значный<br>номер телефона</th>
+                    <th>Тарифный план</th>
+                    <th>Общее количество минут телефонных<br>разговоров за последний месяц</th>
+                    <th>Подробнее</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <%@subscribers.each do |subscriber|%>
+                <tr>
+                    <td><%= subscriber.name %></td>
+                    <td><%= subscriber.surname %></td>
+                    <td><%= subscriber.telephone %></td>
+                    <td><%= subscriber.tariff %></td>
+                    <td><%= subscriber.minutes %></td>
+                    <td><a href="/subscribers/<%= subscriber.telephone %>">Смотреть</a></td>
+                    <td><a href="/subscribers/<%= subscriber.telephone %>/delete">Удалить</a></td>
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div> 
+</div> 

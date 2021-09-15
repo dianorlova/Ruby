@@ -1,0 +1,12 @@
+# frozen_string_literal: true
+
+source 'https://rubygems.org'
+
+gem 'dry-schema' # для валидации этих форм
+gem 'forme' # для создания формы
+gem 'roda'
+gem 'tilt' # для вывода информации
+group :development do
+  gem 'rerun'
+  gem 'rubocop'
+end

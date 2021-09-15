@@ -1,0 +1,21 @@
+<div class="grid-x grid-margin-x">
+    <div class="large-12 cell">
+        <h4>Статистика за месяц</h4>
+        <div class="cell large-12">
+            <a href="<%= '/subscribers' %>" class="button secondary">Вернуться к главной странице</a>
+        </div> 
+        <ul>
+            <li>Общее количество абонентов: <%= @all_numbers_subscribers %> </li>
+            <li>Количество абонентов каждого тарифного плана</li>
+            <ul>
+                <li>Безлимитный тариф: <%= @number_of_subscribers_unlim_tariff %></li>
+                <li>Комбинированный тариф: <%= @number_of_subscribers_comb_tariff %></li>
+                <li>Повременный тариф: <%= @number_of_subscribers_timed_tariff %></li>
+            </ul>
+            <li>Средняя общая стоимость телефонной связи за месяц: <%= @average_total_cost_of_telephone %> руб.</li>
+            <li>Среднее количество минут телефонных разговоров на безлимитном тарифе: <%= @average_minute_unlim_tariff %> мин</li>
+            <li>Среднее количество минут телефонных разговоров сверх лимита на комбинированном тарифе: <%= @average_minute_comb_tariff %> мин</li>
+            <li>Среднее количество минут телефонных разговоров на повременном тарифе: <%= @average_minute_timed_tariff %> мин</li>
+        </ul>
+    </div>
+</div>

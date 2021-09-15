@@ -1,0 +1,42 @@
+<div class="grid-x grid-padding-x">
+
+    <div class="large-12 cell">
+        <a href="/<%= @school.type%>/<%= @school.number%>" class="button secondary">Вернуться на страницу школы</a>
+    </div>
+
+    <div class="large-12 cell">
+        <h3><%= @group.name %></h3>
+    </div>
+
+    <div class="large-12 cell">
+        <%('А'..'Я').each do |letter|%>
+            <a href="/<%= @school.type%>/<%= @school.number%>/group/<%= @group.number.to_s+ '_' + ('а'..'я').to_a.index(@group.letter).to_s%>?index_letter=<%=('А'..'Я').to_a.index(letter).to_s%>" class="button"><%= letter%></a>
+        <%end%>
+    </div>
+
+    <div class="large-12 cell">
+        <table>
+        <thead>
+            <tr>
+                <th>Фамилия</th>
+                <th>Имя</th>
+                <th>Отчество</th>
+                <th>Дата рождения</th>
+                <th>Пол</th>
+            </tr>
+        </thead>
+        <tbody>
+            <%@filtered_students.each do |student|%>
+            <tr>
+                <td><%= student.surname %></td>
+                <td><%= student.name %></td>
+                <td><%= student.patronymic %></td>
+                <td><%= student.date %></td>
+                <td><%= student.sex %></td>
+            </tr>
+            <%end%>
+        </tbody>
+        </table>
+    </div>
+
+</div>

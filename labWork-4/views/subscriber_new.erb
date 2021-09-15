@@ -1,0 +1,58 @@
+<div class="grid-x grid-margin-x">
+    <h3>Добавление абонента</h3>
+</div>
+
+<% form({ method: :post },{ obj: @parameters }) do |f|%>
+    <div class="grid-x grid-margin-x">
+            <div class="cell large-12">
+                <%= f.input(:name, type: :text, label: 'Имя', placeholder: 'Илон')%>
+            </div>
+            <div class="cell large-12">
+                <%= f.input(:surname, type: :text, label: 'Фамилия', placeholder: 'Маск')%>
+            </div>
+
+            <div class="cell large-4">
+                <div class="callout primary">
+                    <h5> Безлимитный тариф</h5>
+                    <ul>
+                        <li>Объём минут: не ограничен</li>
+                        <li>Ежемесячная плата, руб.: 420,00</li>
+                        <li>Стоимость минуты сверх объёма, руб.: 0,00</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cell large-4">
+                <div class="callout primary">
+                    <h5> Комбинированный тариф</h5>
+                    <ul>
+                        <li>Объём минут: 350</li>
+                        <li>Ежемесячная плата, руб.: 300,00</li>
+                        <li>Стоимость минуты сверх объёма, руб.: 0,34</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cell large-4">
+                <div class="callout primary">
+                    <h5> Повременный тариф</h5>
+                    <ul>
+                    <li>Объём минут: 0</li>
+                        <li>Ежемесячная плата, руб.: 180,00</li>
+                        <li>Стоимость минуты сверх объёма, руб.: 0,38</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cell large-12">
+                <%= f.input(:tariff, type: :select, label: 'Тарифный план', options: TariffType.all_types, add_blank: true)%>
+            </div>
+            <div class="cell large-12">
+                <%= f.input(:minutes, type: :text, label: 'Общее количество минут', placeholder: '250.0')%>
+            </div>
+            <div class="cell large-12">
+                <%= f.button(value: 'Добавить', class: 'button') %>
+                <a href="<%= '/subscribers' %>" class="button secondary">Отмена</a>
+            </div> 
+    </div>
+<% end %>

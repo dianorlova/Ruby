@@ -1,0 +1,31 @@
+<div class="grid-x grid-margin-x">
+    <div class="cell large-12 warning">
+        <h3>Абонент</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Имя</th>
+                    <th>Фамилия</th>
+                    <th>6-значный<br>номер телефона</th>
+                    <th>Тарифный план</th>
+                    <th>Общее количество минут телефонных<br>разговоров за последний месяц</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><%= @subscriber.name %></td>
+                    <td><%= @subscriber.surname %></td>
+                    <td><%= @subscriber.telephone %></td>
+                    <td><%= @subscriber.tariff %></td>
+                    <td><%= @subscriber.minutes %></td>
+                    <td><a href="/subscribers/<%=  @subscriber.telephone %>/delete">Удалить</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="cell large-12">
+        <a href="<%= '/subscribers' %>" class="button secondary">Вернуться к главной странице</a>
+        <a href="<%= '/subscribers/find' %>" class="button secondary">Вернуться к странице поиска абонента</a>
+    </div> 
+</div>

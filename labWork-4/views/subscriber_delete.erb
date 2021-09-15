@@ -1,0 +1,37 @@
+<div class="grid-x grid-margin-x">
+    <div class="cell large-12 warning">
+        <h3>Вы действительно хотите удалить абонента?</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Имя</th>
+                    <th>Фамилия</th>
+                    <th>6-значный<br>номер телефона</th>
+                    <th>Тарифный план</th>
+                    <th>Общее количество минут телефонных<br>разговоров за последний месяц</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><%= @subscriber.name %></td>
+                    <td><%= @subscriber.surname %></td>
+                    <td><%= @subscriber.telephone %></td>
+                    <td><%= @subscriber.tariff %></td>
+                    <td><%= @subscriber.minutes %></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<% form({ method: :post },{ obj: @parameters }) do |f|%>
+    <div class="grid-x grid-margin-x">
+            <div class="cell large-12">
+                <%= f.input(:confirmation, type: :checkbox, label: 'Подтверждаю удаление') %>
+            </div>
+            <div class="cell large-12">
+                <%= f.button(value: 'Удалить', class: 'button') %>
+                <a href="<%= '/subscribers' %>" class="button secondary">Отмена</a>
+            </div> 
+    </div>
+<% end %>

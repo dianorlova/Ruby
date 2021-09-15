@@ -1,0 +1,5 @@
+# содержит список того, с чем мы хотим работать в рамках нашего приложения
+source 'https://rubygems.org'
+gem 'chunky_png'
+
+gem "write_xlsx", "~> 1.7"

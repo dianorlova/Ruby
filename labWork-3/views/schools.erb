@@ -1,0 +1,27 @@
+<div class="grid-x grid-padding-x">
+
+    <div class="large-12 cell">
+        <h3>Страница со списком школ</h3>
+    </div>
+
+
+    <div class="large-12 cell">
+    <p>Выберите тип учебного заведения, по которому осуществить фильтрацию. Для отмены нажмите "Отмена".</p>
+        <div class="button-group">
+            <a href="schools?type=school" class="button">Школа</a>
+            <a href="schools?type=lyceum" class="button">Лицей</a>
+            <a href="schools?type=gymnasium" class="button">Гимназия</a>
+            <a href="schools" class="button secondary ">Отмена</a>
+        </div>
+    </div>
+
+    <div class="large-12 cell">
+        <table>
+            <tbody>
+                <%@filtered_schools.each do |school|%>
+                    <tr><td><a href="<%= school.type%>/<%= school.number%>"><%= school.name %></a></td></tr>
+                <%end%>
+            </tbody>
+        </table>
+    </div>
+</div>

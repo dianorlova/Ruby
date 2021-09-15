@@ -1,0 +1,36 @@
+<div class="grid-x grid-margin-x">
+    <div class="large-12 cell">
+        <h4>Список абонентов, сгруппированный по тарифному плану и отсортированный по фамилии</h4>
+        <div class="cell large-12">
+            <a href="<%= '/subscribers' %>" class="button secondary">Вернуться к главной странице</a>
+        </div> 
+        <h5><%= @tariff %> тариф</h5>
+        <ul>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Имя</th>
+                        <th>Фамилия</th>
+                        <th>6-значный<br>номер телефона</th>
+                        <th>Общее количество минут телефонных<br>разговоров за последний месяц</th>
+                        <th>Оплата за последний месяц</th>
+                        <th>Подробнее</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <%@subscribers_group.each do |subscriber|%>
+                    <tr>
+                        <td><%= subscriber.name %></td>
+                        <td><%= subscriber.surname %></td>
+                        <td><%= subscriber.telephone %></td>
+                        <td><%= subscriber.minutes %></td>
+                        <td><%= subscriber.payment_for_last_month %></td>
+                        <td><a href="/subscribers/<%= subscriber.telephone %>">Смотреть</a></td>
+                    </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </ul>
+    </div>   
+</div>   

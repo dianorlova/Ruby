@@ -1,0 +1,48 @@
+<div class="grid-x grid-padding-x">
+
+    <div class="large-12 cell">
+        <h3>Страница со списком школ</h3>
+    </div>
+
+
+    <div class="large-12 cell">
+        <div class="expanded button-group">
+            <input type="submit" value="Школа" class="button">
+            <input type="submit" value="Лицей" class="button">
+            <input type="submit" value="Гимназия" class="button">
+        </div>
+    </div>
+        
+
+    <div class="large-12 cell">
+    
+        <table>
+        <thead>
+            <tr>
+                <th>Фамилия</th>
+                <th>Имя</th>
+                <th>Отчество</th>
+                <th>Дата рождения</th>
+                <th>Пол</th>
+                <th>Номер<br>класса</th>
+                <th>Наименование учебного<br> заведения с номером</th>
+            </tr>
+        </thead>
+        <tbody>
+            <%@schools.sorted_schools_by_type_and_num.each do |school|%>
+            <tr>
+                <td><%= student.surname %></td>
+                <td><%= student.name %></td>
+                <td><%= student.patronymic %></td>
+                <td><%= student.date %></td>
+                <td><%= student.gender %></td>
+                <td><%= student.class_number %></td>
+                <td><%= student.institution %></td>
+            </tr>
+
+            <%end%>
+        </tbody>
+        </table>
+    
+    </div> 
+</div> 

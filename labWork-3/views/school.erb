@@ -1,0 +1,50 @@
+<div class="grid-x grid-padding-x">
+
+    <div class="large-12 cell">
+        <a href="/schools" class="button secondary">Cписок школ</a>
+    </div>
+
+    <div class="large-12 cell">
+        <h3><%= @school.name %></h3>
+    </div>
+
+    <div class="large-4 cell">
+        <p>Общее количество учеников в школе: <%= @school.count_all_people_in_school %></p>
+    </div>
+    <div class="large-4 cell">
+        <p>Количество девочек: <%= @school.count_all_girls_in_school %></p>
+    </div>
+    <div class="large-4 cell">
+        <p>Количество мальчиков: <%= @school.count_all_boys_in_school %></p>
+    </div>
+
+<%# reverse %>
+    <% if @flag %>
+        <div class="large-12 cell">
+            <a href="/<%= @school.type%>/<%= @school.number%>" class="button">↑/↓</a>
+        </div>
+        <div class="large-12 cell">
+            <table>
+                <tbody>
+                    <%@school.groups_list_in_school.reverse.each do |group|%>
+                        <tr><td><a href="/<%= @school.type%>/<%= @school.number%>/group/<%= group.number.to_s+ '_' + ('а'..'я').to_a.index(group.letter).to_s%>"><%= group.name %></a></td></tr>
+                    <%end%>
+                </tbody>
+            </table>
+        </div>
+    <% else %>
+        <div class="large-12 cell">
+            <a href="/<%= @school.type%>/<%= @school.number%>/reverse" class="button">↑/↓</a>
+        </div>
+        <div class="large-12 cell">
+            <table>
+                <tbody>
+                    <%@school.groups_list_in_school.each do |group|%>
+                        <tr><td><a href="/<%= @school.type%>/<%= @school.number%>/group/<%= group.number.to_s+ '_' + ('а'..'я').to_a.index(group.letter).to_s%>"><%= group.name %></a></td></tr>
+                    <%end%>
+                </tbody>
+            </table>
+        </div>
+    <% end %>
+
+</div>

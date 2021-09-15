@@ -1,0 +1,7 @@
+60.5 sq.m; 3; Kirovsky district,Lenin Avenue,55; 2; brick; 9; 2 million; 50-70 sq.m;2-4;Dzerzhinsky,Leninsky;7,9;1-1.2 million
+60.5 sq.m; 3; Frunzensky district,Lenin Avenue,55; 2; brick; 5; 2 million; 50-70 sq.m;2-4;Kirovsky,Leninsky;1,2,3;1-1.5 million
+44 sq.m; 3; Frunzensky district,Lenin Avenue,55; 2; brick; 5; 1 million; 50-70 sq.m;2-4;Kirovsky,Leninsky;1,2,3;1-1.5 million
+44 sq.m; 3; Frunzensky district,Lenin Avenue,55; 2; panel; 10; 1 million; 50-70 sq.m;2-4;Kirovsky,Leninsky;1,2,3;1-1.5 million
+70 sq.m; 3; Leninsky district,Voinova st.,10; 1; brick; 9; 2 million; 50-70 sq.m;2-4;Kirovsky,Leninsky;1,2,3;1-1.5 million
+57 sq.m; 2; Leninsky district,Victory street,6; 3; brick; 9; 2 million; 50-70 sq.m;2-4;Kirovsky,Leninsky;1,2,3;1-1.5 million
+57 sq.m; 2; Kirovsky district,Mira street,120; 3; brick; 9; 2 million; 50-70 sq.m;2-4;Kirovsky,Leninsky;1,2,3;1-1.5 million
